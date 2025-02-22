@@ -1,0 +1,25 @@
+Critical Issues:
+1.SQL Injection (High Risk):
+
+Description: Unvalidated user input is directly used in SQL queries.
+Location: src/main/java/com/example/UserService.java:45
+Recommendation: Use prepared statements and parameterized queries to prevent SQL injection.
+
+2.Hardcoded Credentials (High Risk):
+
+Description: Sensitive credentials found in the source code.
+Location: src/main/resources/application.properties
+Recommendation: Store credentials in environment variables or a secure vault.
+
+High-Risk Issues
+3.Cross-Site Scripting (XSS):
+
+Description: Unescaped user input is rendered on the web page.
+Location: src/main/java/com/example/WebController.java:32
+Recommendation: Properly escape and sanitize user input.
+
+4.Use of Weak Hashing Algorithm:
+
+Description: Application uses MD5 for password hashing.
+Location: src/main/java/com/example/SecurityUtil.java:28
+Recommendation: Use a stronger algorithm like bcrypt or Argon2.
